@@ -7,6 +7,7 @@ import Login from 'pages/login'
 import { Component, lazy, Show } from 'solid-js'
 import { self } from 'store/user'
 
+import { CloseIcon } from 'icons'
 import 'style/base.scss'
 import 'style/config.scss'
 import 'style/theme.scss'
@@ -40,7 +41,15 @@ const DashRoutes = () => (
 )
 
 const NotAvaiable: Component = () => {
-    return <>404</>
+    return (
+        <div class='not-ava-container title_small'>
+            <div class='icon'>
+                <CloseIcon />
+            </div>
+
+            <p>این بخش از سایت در دسترس نمیباشد!</p>
+        </div>
+    )
 }
 
 render(Root, document.getElementById('root')!)
