@@ -1,0 +1,74 @@
+.user-profile-container {
+    margin-top: 2rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: clamp(0px, 100%, 1000px);
+    background-color: white;
+
+    border-radius: 1.5rem;
+
+    .user-legend {
+        padding-inline: 1rem;
+    }
+
+    .user-details {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        align-content: flex-start;
+
+        padding-inline: 0.5rem;
+
+        font-size: 15px;
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0.5rem;
+
+            border-bottom: 1px solid #ddd;
+
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+
+                transform: translateX(-50%);
+
+                height: 100%;
+                width: 2px;
+
+                background-color: #ddd;
+            }
+
+            &:nth-child(odd) {
+                border-left: 1px solid #ddd;
+            }
+
+            > * {
+                width: 100%;
+            }
+
+            img {
+                height: 80px;
+            }
+            .holder {
+                text-align: left;
+                font-family: iranBold;
+            }
+            .data {
+                font-family: iranLight;
+            }
+        }
+    }
+}

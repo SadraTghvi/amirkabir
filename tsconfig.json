@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        // "types": ["vite/client"],
+        "noEmit": true,
+        "isolatedModules": true,
+
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "downlevelIteration": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "outDir": "./dist/",
+        "rootDir": "./src/",
+        "baseUrl": "./src/",
+        "removeComments": true,
+        "noEmitOnError": true,
+
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+
+        "typeRoots": ["node_modules/@types"],
+        "experimentalDecorators": true,
+
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true
+    },
+    "include": ["./src"],
+    "exclude": ["*.js", "node_modules"]
+}

@@ -1,0 +1,226 @@
+@use 'config' as g;
+@use 'theme';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.selectable {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+
+html {
+    body {
+        @include theme.light;
+
+        .root {
+            background-color: var(--main-bg);
+        }
+    }
+}
+
+body {
+    height: 100dvh;
+
+    overflow-x: hidden;
+    direction: rtl;
+
+    // background-color: #eb7575;
+
+    -webkit-tap-highlight-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        height: 100vh;
+    }
+
+    @media all and (display-mode: standalone) {
+        height: 100vh;
+    }
+
+    .root {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: var(--accent-color);
+
+        transition: background-color 1s ease;
+
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+.section_title2 {
+    font-size: g.$SECTION_TITLE2_FONTSIZE;
+    font-family: 'iranBold';
+}
+.section_title {
+    font-size: g.$SECTION_TITLE_FONTSIZE;
+    font-family: 'iranBold';
+}
+.title_hero {
+    font-size: g.$HERO_TITLE_FONTSIZE;
+    font-family: 'iranBold';
+}
+.title_hero2 {
+    font-size: g.$HERO2_TITLE_FONTSIZE;
+    font-family: 'iranBold';
+}
+.title {
+    font-size: g.$TITLE_FONTSIZE;
+    font-family: 'yekanBold';
+}
+.title_small {
+    font-size: g.$TITLE_FONTSIZE_SMALL;
+    font-family: 'yekanBold';
+}
+.title_smaller {
+    font-size: g.$TITLE_FONTSIZE_SMALLER;
+    font-family: 'yekan';
+}
+.description {
+    font-size: g.$DESCRIPTION_FONT_SIZE;
+    font-family: 'yekan';
+}
+.description_small {
+    font-size: g.$DESCRIPTION_FONT_SIZE_SMALL;
+    font-family: 'yekan';
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.number {
+    font-family: 'number';
+}
+
+.pinar {
+    font-family: 'pinar';
+    font-weight: 800;
+}
+
+// reset
+a {
+    color: unset;
+    text-decoration: none;
+    font: inherit;
+}
+button {
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: unset;
+
+    font: inherit;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}
+a,
+area,
+button,
+[role='button'],
+label,
+select,
+summary {
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+    color: unset;
+    background-color: transparent;
+
+    /* hide arrows
+ Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+    }
+
+    /* Firefox */
+    &[type='number'] {
+        -moz-appearance: textfield !important;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--primaty-color) inset !important;
+    -webkit-text-fill-color: var(--accent-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border-radius: inherit;
+}
+
+input:-webkit-autofill::first-line {
+    /* use your desired font settings here */
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+}
+// reset end
